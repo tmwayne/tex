@@ -1,0 +1,70 @@
+%
+% ------------------------------------------------------------------------------
+% Math Commands
+% ------------------------------------------------------------------------------
+%
+% Tyler Wayne © 2021
+% 
+
+% From intro guide to custom packages
+% https://en.wikibooks.org/wiki/LaTeX/Creating_Packages
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mymath}
+
+\RequirePackage{amsthm}
+\RequirePackage{amssymb} % provides majority of mathematical symbols
+\RequirePackage{mathtools} % \xrightarrow
+\RequirePackage{amsmath} % \DeclareMathOperator
+\RequirePackage{mathrsfs} % \mathscr
+
+% Theorem Declarations ---------------------------------------------------------
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{example}{Example}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{observation}{Observation}
+\newtheorem*{note}{Note}
+\newtheorem*{claim}{Claim}
+
+% Custom Commands --------------------------------------------------------------
+
+\newcommand*{\N}{\mathbb{N}} % naturals
+\newcommand*{\Z}{\mathbb{Z}} % integers
+\newcommand*{\Q}{\mathbb{Q}} % rationals
+\newcommand*{\R}{\mathbb{R}} % reals
+\newcommand*{\C}{\mathbb{C}} % complex
+
+\newcommand*{\T}{\mathbb{T}} % torus
+\newcommand*{\D}{\mathbb{D}} % disk
+\renewcommand*{\S}{\mathbb{S}} % sphere, note we overwrite the section command
+
+\newcommand*{\from}{\colon}
+\newcommand*{\0}{\varnothing}
+\newcommand*{\restr}[1]{\mid_{#1}}
+
+\newcommand*{\scr}{\mathscr}
+
+\newcommand*{\id}{\mathrm{id}} % identity map
+
+% Custom Math Operators --------------------------------------------------------
+
+% On when to use DeclareMathOperator
+% https://tex.stackexchange.com/a/67529
+\DeclareMathOperator{\im}{Im} % image
+\DeclareMathOperator{\fab}{FAb} % free abelian group
+\DeclareMathOperator{\rank}{rank}
+
+\DeclareMathOperator{\ob}{Ob} % objects
+\DeclareMathOperator{\mor}{Mor} % morphisms
+
+\endinput
